@@ -1,0 +1,24 @@
+print ("Bienvenue dans Pyton Pizza Delivery")
+taille = input("Quelle taille de pizza souhaitez-vous ? (S, M, L) : ")
+add_pepperoni = input("Voulez-vous du pepperoni sur votre pizza ? (Y/N) : ")
+extra_cheese = input("Voulez-vous du fromage supplémzntaire sur votre Pizza ? (Y/N) : ")
+if taille == "S":
+    prix_base = 15
+elif taille == "M":
+    prix_base = 20
+elif taille == "L":
+    prix_base = 25
+else:
+    print("Taille indisponible.")
+if taille == "S" :
+    prix_pepperoni = 2
+else:
+    prix_pepperoni = 3
+if add_pepperoni == "Y":
+    prix_total = prix_base + prix_pepperoni
+else:
+    prix_total = prix_base
+if extra_cheese == "Y" :
+  prix_cheese = 1 
+  prix_total = prix_base + (prix_pepperoni + prix_cheese)
+print (f"Prix_total {prix_total} € ") 
