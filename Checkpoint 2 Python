@@ -1,0 +1,51 @@
+shopping_list = []
+shopping_list.append("Pommes")
+shopping_list.append("Bananes")
+shopping_list.append("Lait")
+shopping_list.append("Pain")
+menu = """
+Menu :
+1. Ajouter un élément
+2. Supprimer un élément
+3. Afficher la liste
+4. Quitter
+"""
+
+# Boucle pour afficher le menu et traiter les sélections de l'utilisateur
+while True:
+    print(menu)
+    choice = input("Choisissez une option : ")
+
+    if choice == "1":  # Ajouter un élément
+        if len(shopping_list) < 5:  # Limiter à 5 éléments
+            item = input("Entrez l'élément à ajouter : ")
+            shopping_list.append(item)
+            print(f"{item} a été ajouté à la liste.")
+        else:
+            print("La liste est pleine, vous ne pouvez pas ajouter plus d'éléments.")
+
+    elif choice == "2":  # Supprimer un élément
+        if shopping_list:
+            item = input("Entrez l'élément à supprimer : ")
+            if item in shopping_list:
+                shopping_list.remove(item)
+                print(f"{item} a été supprimé de la liste.")
+            else:
+                print(f"{item} n'est pas dans la liste.")
+        else:
+            print("La liste est vide, rien à supprimer.")
+
+    elif choice == "3":  # Afficher la liste
+        if shopping_list:
+            print("Liste des éléments :")
+            for item in shopping_list:
+                print("- " + item)
+        else:
+            print("La liste est vide.")
+
+    elif choice == "4":  # Quitter
+        print("Merci d'avoir utilisé le programme.")
+        break
+
+    else:
+        print("Option invalide. Veuillez choisir une option valide (1, 2, 3 ou 4).")
